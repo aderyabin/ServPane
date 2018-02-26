@@ -1,5 +1,8 @@
 {
   "extends": [
     "airbnb-standard"
-  ]
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": 0
+  }
 }

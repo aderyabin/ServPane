@@ -1,0 +1,18 @@
+{
+  "name": "ServPane",
+  "version": "0.1.0",
+  "description": "A launchd menu bar app for Mac",
+  "main": "main.js",
+  "author": "Andrey Deryabin",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.electron.ServPane",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    }
+  }
+}

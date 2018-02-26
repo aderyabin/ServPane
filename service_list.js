@@ -1,28 +1,28 @@
-const { Service } = require('./service')
-const { ShellCommand } = require('./shell_command')
+const { Service } = require('./service');
+const { ShellCommand } = require('./shell_command');
 
 class ServiceList {
-  constructor(root_element) {
-    this.root_element = root_element
+  constructor (rootElement) {
+    this.rootElement = rootElement;
   }
 
-  clear() {
-    this.root_element.innerHTML = ""
+  clear () {
+    this.rootElement.innerHTML = '';
   }
 
-  load() {
-    ShellCommand.run("brew", ["services", "list"], (output) => {
-      var lines = output.toString().split("\n");
+  load () {
+    ShellCommand.run('brew', ['services', 'list'], (output) => {
+      const lines = output.toString().split('\n');
       lines.shift();
       lines.pop();
       this.clear();
       lines.forEach((line) => {
-        var parts = line.split(/\s+/)
-        var service = new Service(parts[0], parts[1])
-        service.draw(this.root_element)
-      })
-    })
+        const parts = line.split(/\s+/);
+        const service = new Service(parts[0], parts[1]);
+        service.draw(this.rootElement);
+      });
+    });
   }
 }
 
-exports.ServiceList = ServiceList
+exports.ServiceList = ServiceList;

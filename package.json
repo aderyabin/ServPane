@@ -7,12 +7,20 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "lint": "./node_modules/.bin/eslint *.js"
   },
   "build": {
     "appId": "com.electron.ServPane",
     "mac": {
       "category": "public.app-category.developer-tools"
     }
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-standard": "^1.6.6"
+  },
+  "dependencies": {
+    "electron": "^1.8.2",
+    "electron-builder": "^20.2.0"
   }
 }

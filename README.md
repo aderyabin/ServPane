@@ -7,13 +7,6 @@
 
 <p align="center">A launchd menu bar app for Mac</p>
 
-<p align="center">
-  <a href="https://evilmartians.com/?utm_source=servpane">
-    <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg"
-         alt="Sponsored by Evil Martians" width="236" height="54">
-  </a>
-</p>
-
 ## Download
 ServPane is currently available for Mac OSX.
 
@@ -46,4 +39,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Localer project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/aderyabin/localer/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Localer project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/aderyabin/ServPane/blob/master/CODE_OF_CONDUCT.md).

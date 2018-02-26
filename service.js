@@ -1,55 +1,61 @@
-const { ShellCommand } = require('./shell_command')
-var { ServiceList } = require('./service_list')
+const { ShellCommand } = require('./shell_command');
+
 class Service {
-  constructor(name, state){
-    this.name = name
-    this.state = state
+  constructor (name, state) {
+    this.name = name;
+    this.state = state;
   }
 
-  draw(root_element) {
-    this.node = document.createElement("LI")
-    this.node.setAttribute("data-state", this.state)
+  draw (rootElement) {
+    this.node = document.createElement('LI');
+    this.node.setAttribute('data-state', this.state);
 
-    var statusnode = document.createElement("SPAN")
-    statusnode.setAttribute("class", 'status')
+    const statusnode = document.createElement('SPAN');
+    statusnode.setAttribute('class', 'status');
 
-    var toggler = document.createElement("SPAN")
-    toggler.setAttribute("class", 'toggler')
+    const toggler = document.createElement('SPAN');
+    toggler.setAttribute('class', 'toggler');
 
-    statusnode.appendChild(toggler)
-    this.node.appendChild(statusnode)
+    statusnode.appendChild(toggler);
+    this.node.appendChild(statusnode);
 
-    var textnode = document.createTextNode(this.name)
-    this.node.appendChild(textnode)
-    root_element.appendChild(this.node)
-    this.addListener()
+    const textnode = document.createTextNode(this.name);
+    this.node.appendChild(textnode);
+    rootElement.appendChild(this.node);
+    this.addListener();
   }
 
-  setState(state) {
-    this.node.setAttribute("data-state", state);
-    this.state = state
+  setState (state) {
+    this.node.setAttribute('data-state', state);
+    this.state = state;
   }
 
-  addListener(callback) {
+  addListener (callback) {
     this.node.addEventListener('click', () => {
-      var old_state = this.state
+      const oldState = this.state;
       this.setState('waiting');
-      var command = (old_state == "started") ? "stop"
-                  : (old_state == "stopped") ? "start"
-                  : null
+
+      let command;
+      if (oldState === 'started') {
+        command = 'stop';
+      } else if (oldState === 'stopped') {
+        command = 'start';
+      } else {
+        command = null;
+      }
 
       if (command) {
-        ShellCommand.run("brew", ["services", command, this.name], (output) => {
-          var match = output.match(/(started)|(stopped)/)
-          if (match){
-            var new_state = match[0]
-            this.state = new_state
-            this.setState(new_state)
+        ShellCommand.run('brew', ['services', command, this.name], (output) => {
+          const match = output.match(/(started)|(stopped)/);
+          if (match) {
+            const newState = match[0];
+            this.state = newState;
+            this.setState(newState);
           }
-        })
+        });
       }
-    })
+    });
   }
 }
 
-exports.Service = Service
+exports.Service = Service;

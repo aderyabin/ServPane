@@ -1,9 +1,17 @@
-<div align="center">
+<p align="center">
   <img alt="PrefPane" src="https://gist.githubusercontent.com/aderyabin/74f49078ba522a9e923614050dd6895b/raw/logo-full.png" width="400px">
-</div>
-<div align="center" style="margin-top: 50px">
+</p>
+
+<p align="center">
   <img alt="PrefPane in action" src="https://gist.githubusercontent.com/aderyabin/74f49078ba522a9e923614050dd6895b/raw/ServPane-screen.png" width="300px">
-</div>
+</p>
+
+<p align="center">
+  <a href="https://evilmartians.com/?utm_source=servpane">
+    <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg"
+         alt="Sponsored by Evil Martians" width="236" height="54">
+  </a>
+</p>
 
 <p align="center">A launchd menu bar app for Mac</p>
 

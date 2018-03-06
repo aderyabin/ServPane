@@ -25,8 +25,8 @@ class ServiceList {
       } else {
         const tip = document.createElement('LI');
         const tipText = document.createTextNode('No available service');
-        tip.appendChild(tipText)
-        this.rootElement.appendChild(tip)
+        tip.appendChild(tipText);
+        this.rootElement.appendChild(tip);
       }
     });
   }

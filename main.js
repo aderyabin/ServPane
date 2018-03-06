@@ -4,7 +4,7 @@ const {
 const path = require('path');
 const fixPath = require('fix-path');
 
-// Fix GUI apps on macOS doesn't inherit the $PATH defined in your dotfiles 
+// Fix GUI apps on macOS doesn't inherit the $PATH defined in your dotfiles
 fixPath();
 
 let tray;

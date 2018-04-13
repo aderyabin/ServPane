@@ -1,6 +1,6 @@
 {
   "name": "ServPane",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A launchd menu bar app for Mac",
   "main": "main.js",
   "author": "Andrey Deryabin",

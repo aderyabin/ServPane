@@ -2,6 +2,10 @@ const {
   systemPreferences, app, BrowserWindow, ipcMain, Tray, nativeImage
 } = require('electron');
 const path = require('path');
+const fixPath = require('fix-path');
+
+// Fix GUI apps on macOS doesn't inherit the $PATH defined in your dotfiles
+fixPath();
 
 let tray;
 let window;

@@ -20,6 +20,8 @@ ServPane is currently available for Mac OSX.
 
 Download the latest version from the [releases](https://github.com/aderyabin/ServPane/releases) page.
 
+    brew install --cask servpane
+
 ## Technical
 ServPane is built using HTML, CSS, and JavaScript. It's also built using [Electron](https://github.com/electron/electron).
 
